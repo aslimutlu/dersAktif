@@ -980,35 +980,9 @@
     ]
 
 
-    // //ürün fiyatı 50 den büyük olan ürünleri console a yaz.
-    // //FILTER
-
-    // var filteredProducts = products.filter(x => x.unitPrice > 50)
-    // console.log(filteredProducts);
-
-
-    // //ismi A harfi ile başlayan ürünleri
-    // var filteredProducts2 = products.filter(x => x.name.startsWith('A'))
-    // console.log(filteredProducts2);
-
-    // //FIND method
-    // //find syntax filter ile birebir aynıdır. sadece bu fonksiyon YAKALADIĞI İLK değeri yani bir adet object return eder!
-
-    // var product = products.find(q => q.id == 3333);
-    // console.log(product?.name);
-
-    // // alert('Hello')
-
-    // //sort function diziyi sıralamamı sağlar...!
-
-    // var sortedProducts = products.sort((a, b) => a.unitPrice - b.unitPrice)
-    // console.log("sortedProducts", sortedProducts);
-
-
-
-
     //fiyatı 30 ile 100 arasında kaç adet ürün var?    
-    var filteredProducts = products.filter(x => 100 > x.unitPrice > 30)
+
+    var filteredProducts = products.filter(x => x <= 100 && x >= 30)
     console.log(filteredProducts);
 
     //ismi a harfi ile başlayan ürünleri console a yazdır
@@ -1030,12 +1004,15 @@
     var sonuc5 = products.filter(d => d.discontinued == false).length
     console.log(sonuc5);
 
-
     // en pahalı ürünün adını console a yazdır
 
+    var sonuc6 = products.find(p => p.unitPrice == Math.max(...products.map(d => d.unitPrice))).name
+    console.log(sonuc6);
 
     //en ucuz ürünün adını console a yazdır
 
+    var sonuc7 = products.find(p => p.unitPrice == Math.min(...products.map(d => d.unitPrice))).name
+    console.log(sonuc7);
 
 </script>
 
